@@ -1,0 +1,1 @@
+//!askingAlbum&&albumFound&&  we need askingAlbum to set the visible property of a for the album pero
