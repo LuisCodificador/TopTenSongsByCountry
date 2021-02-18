@@ -20,7 +20,7 @@ export const getSpotifyToken = async () => {
     // console.log("Desde getSpotify token: ", token);
 
     if (!token || token === undefined){
-        // console.log("Token not provided by spotify!")
+        console.log("Token not provided by Spotify!")
         return '';
     }
     return token;         

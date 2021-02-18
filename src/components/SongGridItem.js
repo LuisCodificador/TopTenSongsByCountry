@@ -14,11 +14,13 @@ export const SongGridItem = ({artist, name, urlLyrics, token}) => {
     //!askingAlbum&&albumFound&&  we need askingAlbum to set the visible property of a for the album pero
     // Por alguna razon useFetchSpotifyAlbum es resuelto tardiamente porque vemos efectivamente el album 
     // desplegado en pagina pero no vemos en consola los datos
+
+    //`${album.img?true:false}`
     return (       
         <div className="row info">
             <li className="col-1 number-list">        
                 <div className="art-album animate__animated animate__fadeIn">
-                    <a href={album.url} target="_blank" rel="noopener noreferrer"><img src={album.img} className="artImage" alt="artAlbum" width="64" height="64"></img></a>
+                    <a href={album.url} target="_blank" rel="noopener noreferrer"><img href={album.url} src={album.img} className="artImage" alt="artAlbum" width="64" height="64"></img></a>
                 </div>
             </li>
             <div className="col-11 song-artist animate__animated animate__fadeIn">

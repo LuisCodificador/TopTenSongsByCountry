@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import lstCountries from '../helpers/lstCountries'
+import lstCountries from '../helpers/lstCountriesEnEs'
 
 let foundCountry = true;
 
@@ -27,8 +27,8 @@ export const InputCountry = ({setCountries, countries: paises}) => { // we renam
         
         // Lets receive the first element of the array
         const input = inputCountry.trim().toUpperCase()
-        const [pais] = lstCountries.filter(country=>country.name.toUpperCase()=== input);
-        // console.log(pais);
+        const [pais] = lstCountries.filter(country => (country.name.toUpperCase() === input) || (country.nameEs.toUpperCase() === input));
+        // const [pais] = lstCountries.filter(country => country.name.toUpperCase() === input);
         
         if (pais !== undefined){ 
             if (!paises.includes(pais.name)){ 

@@ -18,9 +18,19 @@ require('dotenv').config();
     // console.log(pais);
     let codeCountry = pais.key;
     const url = `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=10&country=${codeCountry}&f_has_lyrics=1&apikey=${process.env.REACT_APP_MM_KEY}`;
+         
     const resp = await fetch(url);
-    const {message} = await resp.json();  
+    // console.log("La resp");
+    // console.log(resp);
     
+    if (resp.status === 403){
+        console.log("Ups! MusicMatch refused to give us access to their lyrics. Please contact Luis.")
+        setInfoFound(false); // Comes from LyricsFinderApp through CountryGrid 
+        return {};
+    }
+
+    const {message} = await resp.json(); 
+   
     const track_list =  message.body.track_list;
     // console.log("tracks: " , track_list);
     
@@ -59,3 +69,4 @@ require('dotenv').config();
         return songs;         
         }   
 }
+

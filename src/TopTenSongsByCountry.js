@@ -55,8 +55,11 @@ export const TopTenSongsByCountry = () => {
                 
             />
             {/* {showSpinner&&<Spinner />} */}
-            {!infoFound&&<h3 className="no-info animate__animated animate__shakeX">Ups! MusixMatch didn't give us anything for that country!</h3>}
-            {/* NOTE. ol always must be draw becuase the constant updating of the countries */}
+            {/*!infoFound&&<h3 className="no-info animate__animated animate__shakeX">Ups! MusixMatch didn't give us anything for that country!</h3>*/}
+
+            {!infoFound&&<h3 className="no-info animate__animated animate__shakeX">Ups! We had an issue with MusixMatch. Please try later.</h3>}
+
+            {/* NOTE. ol always must be draw because the constant updating of the countries */}
             <ol> 
                 {
                     countries.map((country, i) => (

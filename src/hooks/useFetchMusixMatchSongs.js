@@ -19,7 +19,7 @@ export const useFetchMusixMatchSongs = (country, setInfoNotFound) => {
                     loading: false
                 });
             })
-        }, [country, setInfoNotFound]); // PENDING: Este fue el primer fecth funcional implementado. Pero este no pendende de setState y los otro s[i]? why?
+        }, [country, setInfoNotFound]); // PENDING: Este fue el primer fetch funcional implementado. Pero este no depende de setState y los otro s[i]? why?
   
     return state; // {data: [], loading: true};
 }

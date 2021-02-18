@@ -17,7 +17,7 @@ export const getSpotifyInfo = async (artist, name) => {
     // console.log("Token: ", token);
     const token= data.access_token;     
     if (!token || token === undefined){
-    console.log("Token not provided by spotify!")
+    console.log("Token not provided by Spotify!")
         return {};
     }
 
